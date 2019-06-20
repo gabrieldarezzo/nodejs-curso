@@ -22,6 +22,13 @@ RUN AS LINUX ok?!
 
 
 
+Ps²: 
+
+If you use Windows 10 Home and get this error when install Docker-CE  
+![Docker-Error](doc/docker_error.png)     
+You should download [DockerToolbox](https://download.docker.com/win/stable/DockerToolbox.exe) instead of Docker-CE
+
+
 ## Add Mongo in docker
 ```PowerShell
 docker pull mongo
