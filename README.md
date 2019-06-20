@@ -12,6 +12,11 @@ After you just need start:
 ```PowerShell
 node server.js
 ```
+Or:
+```PowerShell
+npm run dev
+```
+
 
 # Install Docker (Windows:Mode)
 Download docker:
@@ -24,23 +29,30 @@ RUN AS LINUX ok?!
 
 Ps²: 
 
-If you use Windows 10 Home and get this error when install Docker-CE  
+If you use `Windows 10 Home` and get this error when install Docker-CE  
 ![Docker-Error](doc/docker_error.png)     
 You should download [DockerToolbox](https://download.docker.com/win/stable/DockerToolbox.exe) instead of Docker-CE
 
 
-## Add Mongo in docker
+## Run Docker: (Curso / Win 10 Professional)
+
+### Add Mongo in docker
 ```PowerShell
 docker pull mongo
 ```
 
-## Run Docker: (Curso)
+### Run mongo/img
 ```PowerShell
 docker run --name mongodb -p 27017:27017 -d mongo
 ```
 
 
 ## Run Docker: (ToolBoxMode Nobody likes$ Win10-Pro)
+
+Open `Docker Quickstart Terminal`, in prompt run:
+```PowerShell
+docker pull mongo
+```
 
 Run mongo with this params:
 ```PowerShell
@@ -56,6 +68,10 @@ Guest Host: `1111`
 Access URL in Chrome: `http://192.168.99.1:1111` to test, you should recive this response:  
 `It looks like you are trying to access MongoDB over HTTP on the native driver port.`  
 PS: `192.168.99.1` its my ipv4's vm. 
+
+
+Work like a charm, more info in this site:
+https://codehangar.io/mongodb-image-instance-with-docker-toolbox-tutorial/
 
 
 ## List all dockers (actives)
