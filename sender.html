@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:3001/api/products" method="POST" enctype="application/json">
+    
+    <!-- <form id="myForm"> 
+        <input type="text" name="title" value="VueJs" />
+        <input type="text" name="description" value="VueJs é um Framework incremental" />
+        <input type="text" name="url" value="https://vuejs.org/" />
+
+        <input type="submit" value="Enviar" />
+    </form>
+    -->
+
+    <button id="btn-add">Add Product</button>
+    <button id="btn-edit">Edit Product</button>
+    <button id="btn-del">Delete Product</button>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        
+    <script>
+
+        
+        $(document).ready(function() {
+		
+			$( "#btn-add" ).bind( "click", function() {
+				$.ajax({
+					 url: 'http://localhost:3001/api/products'
+					,type:'POST'
+					,dataType: 'json'
+					,contentType:"application/json; charset=utf-8"
+					,data: JSON.stringify({
+						title: "test",
+						description: "VueJs é um Framework incremental",
+						url: "https://vuejs.org/",   
+					})
+					,success: function(response){
+						console.log(response)
+					}
+					,error: function(response){
+						console.log(response);
+					}
+				});
+            });
+            
+            $( "#btn-edit" ).bind( "click", function() {
+				$.ajax({
+					 url: 'http://localhost:3001/api/products/5d0be5a8b77aa41b4c4e999b'
+					,type:'PUT'
+					,dataType: 'json'
+					,contentType:"application/json; charset=utf-8"
+					,data: JSON.stringify({
+						title: "React Native v2",
+						description: "Description goes here...",
+						url: "https://react.org/",   
+					})
+					,success: function(response){
+						console.log(response)
+					}
+					,error: function(response){
+						console.log(response);
+					}
+				});
+            });
+
+
+            $( "#btn-del" ).bind( "click", function() {
+				$.ajax({
+					 url: 'http://localhost:3001/api/products/5d0bf4315627511bb4e65163'
+					,type:'DELETE'
+					,dataType: 'json'
+					,success: function(response){
+						console.log(response)
+					}
+					,error: function(response){
+						console.log(response);
+					}
+				});
+            });
+            
+
+
+            
+        });
+        
+    
+    </script>
+</body>
+</html>

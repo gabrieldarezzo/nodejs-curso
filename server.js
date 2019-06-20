@@ -1,9 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 
 
 const app = express();
+app.use(express.json());
+app.use(cors());
+
+
+
 // mongoose.connect('mongodb://user@pass')
 mongoose.connect('mongodb://192.168.99.1:1111/nodeapi', {
     useNewUrlParser: true 
