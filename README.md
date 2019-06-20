@@ -34,20 +34,36 @@ You should download [DockerToolbox](https://download.docker.com/win/stable/Docke
 docker pull mongo
 ```
 
-## Run Docker:
+## Run Docker: (Curso)
 ```PowerShell
-docker run --name mongodb -p 27017:27017
+docker run --name mongodb -p 27017:27017 -d mongo
 ```
+
+
+## Run Docker: (ToolBoxMode Nobody likes$ Win10-Pro)
+
+Run mongo with this params:
+```PowerShell
+docker run --name database -d -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0
+```
+
+In Oracle VM VirtualBox -> Tab Network, you'll need port fowarding:  
+Port Host: `27017` 
+Guest Host: `1111` 
+![Port Foward](doc/port_fw.png) 
+
+
+Access URL in Chrome: `http://192.168.99.1:1111` to test, you should recive this response:  
+`It looks like you are trying to access MongoDB over HTTP on the native driver port.`  
+PS: `192.168.99.1` its my ipv4's vm. 
+
 
 ## List all dockers (actives)
 ```PowerShell
 docker ps
 ```
+* `-a` <- list all, include turnOff dockers 
 
-## List all dockers (all:all)
-```PowerShell
-docker ps -a
-```
 
 ## Start docker 
 ```PowerShell
