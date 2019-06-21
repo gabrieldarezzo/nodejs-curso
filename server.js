@@ -12,7 +12,8 @@ app.use(cors());
 
 // mongoose.connect('mongodb://user@pass')
 mongoose.connect('mongodb://192.168.99.1:1111/nodeapi', {
-    useNewUrlParser: true 
+    useNewUrlParser: true,
+    useFindAndModify : false,
 });
 
 requireDir('./src/models');

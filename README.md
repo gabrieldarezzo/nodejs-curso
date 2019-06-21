@@ -153,7 +153,13 @@ docker start [NAME_OF_IMAGE]
 # Client for MongoDb:
 [Download Robo 3T](https://robomongo.org/download)  
 
+# To test
 
-I created `sender.html` to test CREATE,UPDATE,DELETE routes, `cors` already enable in this project.
+You can get a nice client of REST:
+https://insomnia.rest/download/
+
+Or just use buttons of `sender.html` to test CREATE,UPDATE,DELETE routes, after all, `cors` already enable in project.
+
+
 
 
